@@ -25,6 +25,8 @@ function run() {
     
     //5. This will print the following string in the action log in github
     core.notice('Hello from my custom JavaScript Action!');
+    const websiteUrl = `http://${bucket}.s3-website-${bucketRegion}.amazonaws.com`;
+    core.setOutput('website-url', websiteUrl);
 }
 
 run();
