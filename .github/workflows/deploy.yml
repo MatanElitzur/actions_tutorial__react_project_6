@@ -69,5 +69,7 @@ jobs:
       - name: Deploy site
         run: echo "Deploying..."
   information:
-    runs-on: Run custom action
-    uses: ./.github/actions/deploy-s3-javascript
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Run custom action
+        uses: ./.github/actions/deploy-s3-javascript
