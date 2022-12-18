@@ -1,0 +1,7 @@
+name: 'Deploy to AWS S3'
+description: 'Deploy a static website via AWS S3'
+runs:
+  using: 'node16'
+  #pre: #To run before the main
+  main: 'main.js' #The name of the file is not relevant 
+  #post: #To run after the main
