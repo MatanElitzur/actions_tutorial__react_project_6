@@ -75,3 +75,9 @@ jobs:
         uses: actions/checkout@v3
       - name: Run custom action
         uses: ./.github/actions/deploy-s3-javascript
+        env: #aws cli tools will be executed from main.js
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }} # aws cli tools will automatically will look for env var AWS_ACCESS_KEY_ID
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }} # aws cli tools will automatically will look for env var AWS_SECRET_ACCESS_KEY
+        with:
+          bucket: 'bucket value'
+          dist-folder: 'dist-folder value '
