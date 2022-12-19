@@ -91,6 +91,6 @@ jobs:
         run: |
           echo "Live URL: ${{ steps.deploy_docker.outputs.website-url }}"
       - name: Use remote action repository
-        uses: MatanElitzur/actions@46b6ea00d2cb287a694c6557e807d285f824585b
-        #uses: MatanElitzur/actions@master --> this doesn't work 
+        uses: MatanElitzur/actions@main
+        #uses: MatanElitzur/actions@46b6ea00d2cb287a694c6557e807d285f824585b --> run specific commit 
       
