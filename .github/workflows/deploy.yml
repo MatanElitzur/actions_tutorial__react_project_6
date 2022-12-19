@@ -90,4 +90,6 @@ jobs:
       - name: Output information deploy with docker
         run: |
           echo "Live URL: ${{ steps.deploy_docker.outputs.website-url }}"
+      - name: Use remote action repository
+        uses: MatanElitzur/actions
       
