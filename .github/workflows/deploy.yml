@@ -74,7 +74,20 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }} # aws cli tools will automatically will look for env var AWS_SECRET_ACCESS_KEY
         with:
           bucket: 'bucket_value'
-          dist-folder: 'dist-folder_value '
+          dist-folder: 'dist-folder_value'
       - name: Output information
         run: |
           echo "Live URL: ${{ steps.deploy.outputs.website-url }}"
+      - name: Deploy site with docker
+        id: deploy_docker
+        uses: ./.github/actions/deploy-s3-docker
+        env: #aws cli tools will be executed from main.js
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }} # aws cli tools will automatically will look for env var AWS_ACCESS_KEY_ID
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }} # aws cli tools will automatically will look for env var AWS_SECRET_ACCESS_KEY
+        with:
+          bucket: 'bucket_value'
+          dist-folder: 'dist-folder_value '
+      - name: Output information deploy with docker
+        run: |
+          echo "Live URL: ${{ steps.deploy_docker.outputs.website-url }}"
+      
