@@ -12,6 +12,6 @@ in our example .github/actions/cached-deps
 
 Then we need to create an action.yml file inside it. This filr will be in any part of an action that we will create.
 
-# We eill create several custom actions
+# Create several custom actions
 1. .github/actions/cached-deps --> action for job caching used by several jobs.
 2. .github/actions/deploy-s3-javascript --> This is a javascript action
